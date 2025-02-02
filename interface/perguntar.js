@@ -1,7 +1,5 @@
 const readline = require('readline');
 
-
-
 const perguntar = (pergunta) => {
   return new Promise((resolve) => {
     const rl = readline.createInterface({

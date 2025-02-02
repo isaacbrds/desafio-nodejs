@@ -6,10 +6,10 @@ const menu = async () =>{
   let sair = 0;
   while (sair == 0) {
     const opcao = await perguntar(`
-      [1] - Cadastrar
-      [2] - Listar
-      [3] - Atualizar
-      [4] - Deletar
+      [1] - Cadastrar Tarefas
+      [2] - Listar Tarefas
+      [3] - Atualizar Tarefa
+      [4] - Deletar Tarefa
       [5] - Sair
       Escolha uma opção:
       `);
@@ -25,10 +25,11 @@ const menu = async () =>{
       break;
     case '3':
       console.log('Atualizar');
-
+      await TarefaServico.alterarTarefa();
       break;
     case '4':
       console.log('Deletar');
+      await TarefaServico.excluirTarefa();
       break;
     case '5':
       console.log('Saindo...');
@@ -39,8 +40,6 @@ const menu = async () =>{
         break;
     }
   }
-  //rl.close();
-  //process.exit(0); // Encerra o programa após sair do loop
 }
 
 module.exports = menu;

@@ -10,7 +10,7 @@ const Tela = {
       setTimeout(resolve, segundos * 1000); // Converte segundos em milissegundos
     });
   },
-  mensagemPor: (mensagem, segundos)=>{
+  mensagemPor: async (mensagem, segundos)=>{
     Tela.limparTela();
     console.log(mensagem)
     Tela.esperarSegundos(segundos)
